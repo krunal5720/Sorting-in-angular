@@ -1,0 +1,62 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+	<meta charset="UTF-8">
+	<title>Login Page</title>
+</head>
+<body>
+	<header>
+		<nav class="navbar navbar-expand-lg navbar-light bg-light">
+			<div class="container">
+				<a class="navbar-brand" href="#">My Website</a>
+				<button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarNav" aria-controls="navbarNav" aria-expanded="false" aria-label="Toggle navigation">
+					<span class="navbar-toggler-icon"></span>
+				</button>
+				<div class="collapse navbar-collapse" id="navbarNav">
+					<ul class="navbar-nav ms-auto">
+						<li class="nav-item">
+							<a class="nav-link" href="#">Home</a>
+						</li>
+						<li class="nav-item">
+							<a class="nav-link" href="#">About Us</a>
+						</li>
+						<li class="nav-item">
+							<a class="nav-link" routerLink="/mergeShort">Merge Short</a>
+						</li>
+						<li class="nav-item">
+							<a class="nav-link" routerLink="/register">Register</a>
+						</li>
+					</ul>
+				</div>
+			</div>
+		</nav>
+	</header>
+
+	<main>
+		<div class="container">
+			<form class="form-signin">
+				<h1 class="h3 mb-3 fw-normal text-center">Please sign in</h1>
+				<label for="inputEmail" id="lblEmailAddress" class="visually-hidden">Email address</label>
+				<input type="email" id="inputEmail" class="form-control" [(ngModel)]="loginDetails.emailAddress" [ngModelOptions]="{standalone: true}" placeholder="Email address" required autofocus>
+				<label for="inputPassword" id="lblPassword" class="visually-hidden">Password</label>
+				<input type="password" id="inputPassword" [(ngModel)]="loginDetails.password" class="form-control" placeholder="Password" [ngModelOptions]="{standalone: true}" required>
+				<div class="checkbox mb-3">
+					<label>
+						<input type="checkbox" id="chkRememberMe" value="remember-me"> Remember me
+					</label>
+				</div>
+				<button class="w-100 btn btn-lg btn-primary" id="btnSubmit" (click)="login(loginDetails)">Sign in</button>
+			</form>
+		</div>
+	</main>
+
+	<footer>
+		<div class="container text-center">
+			<p>&copy; 2023 My Website. All Rights Reserved.</p>
+		</div>
+	</footer>
+
+	<script src="https://cdnjs.cloudflare.com/ajax/libs/jquery/3.6.0/jquery.min.js"></script>
+	<script src="https://cdnjs.cloudflare.com/ajax/libs/twitter-bootstrap/5.1.3/js/bootstrap.bundle.min.js"></script>
+</body>
+</html>
